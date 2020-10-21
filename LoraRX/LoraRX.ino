@@ -1,7 +1,9 @@
 #include <SPI.h>
 #include <LoRa.h>
 #include <LiquidCrystal.h>
+
 const int rs = 8, en = 7, d4 = 6, d5 = 5, d6 = 4, d7 = 3; //Mention the pin number for LCD connection
+
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);//Initialize LCD method
 void setup() {
   Serial.begin(9600);
