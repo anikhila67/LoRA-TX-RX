@@ -10,7 +10,7 @@ void setup() {
   lcd.begin(16, 2);
   while (!Serial);
   Serial.println("LoRa Receiver");
-  if (!LoRa.begin(433E6)) {
+  if (!LoRa.begin(900E6)) {
     Serial.println("Starting LoRa failed!");
     while (1);
   }
@@ -25,13 +25,16 @@ void loop() {
     // read packet
     while (LoRa.available()) {
       char incoming = (char)LoRa.read();
+//      Serial.print(incoming);/
       if (incoming == 'c')
       {
         lcd.setCursor(0, 1);
+//        Serial.println(incoming);/
       }
       else
       {
         lcd.print(incoming);
+        Serial.print(incoming);
       }
     }
   }
